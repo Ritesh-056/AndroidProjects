@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/background_dark_white_own"
+    tools:context=".CompletedProfileCategory"
+    android:id="@+id/content"
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/hello"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/back"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Getting Started "
+                    android:textColor="@color/text_overall"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_heading"
+                    />
+
+
+
+                <TextView
+                    android:layout_below="@id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account created"
+                    android:textColor="@color/text_dim"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_dim"
+
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/mobile_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_centerInParent="true"
+            app:lottie_rawRes="@raw/completed"
+            app:lottie_autoPlay="true"
+            app:lottie_speed="1"
+
+            >
+
+
+
+
+        </com.airbnb.lottie.LottieAnimationView>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobile_icon"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        >
+
+
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/otp_phone"
+            android:text="Congratulations!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#228B22"
+            android:textSize="@dimen/text_heading"
+
+            />
+
+        <TextView
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/otp_phone"
+            android:gravity="center"
+            android:text="You have successfully created an account!"
+            android:textColor="@color/text_overall"
+            android:textSize="@dimen/text_dim"
+            />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/lArrow"
+                android:padding="2dp"
+                android:layout_gravity="center|start"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_left"
+                android:background="@drawable/arrow_backgroud"
+                />
+
+            <ImageView
+                android:id="@+id/rArrow"
+                android:padding="2dp"
+                android:layout_gravity="center|end"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_right"
+                android:background="@drawable/arrow_backgroud"
+                />
+
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textSize="@dimen/text_dim"
+                android:backgroundTint="@color/main_top_own"
+                android:layout_gravity="center|end"
+                />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</RelativeLayout>
+
+

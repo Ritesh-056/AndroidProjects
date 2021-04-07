@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+    <RelativeLayout
+        android:id="@+id/main_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/top"
+            >
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:textSize="@dimen/text_heading"
+                        android:textColor="@color/text_main"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+
+                        />
+
+
+
+                    <TextView
+                        android:layout_below="@id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Click to edit the profile."
+                        android:layout_gravity="center"
+                        android:textColor="@color/text_dim"
+                        android:textSize="@dimen/text_dim"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        />
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    >
+
+
+                    <Button
+                        android:id="@+id/btn_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/text_main"
+                        android:text="Logout"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/text_dim" />
+
+
+                </FrameLayout>
+
+
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top"
+            android:scrollbars="none"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/down"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:id="@+id/main_part"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progress_bar"
+                        android:visibility="gone"
+                        />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="200dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/back"
+                        app:civ_border_color="@color/main_top_own"
+                        app:civ_border_width="2dp"
+                        />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Click profile to edit"
+                        android:gravity="center"
+                        android:textColor="@color/text_dim"
+                        android:textSize="@dimen/text_dim"
+                        />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_part"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp">
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Full Name:"
+                            android:textColor="@color/text_overall"
+                            android:textSize="@dimen/text_normal"
+                            />
+
+
+                        <EditText
+                            android:id="@+id/mUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/text_dim"
+                            android:hint="Tan Ah Hock"
+                            android:textColor="@color/text_overall"
+                            android:textSize="@dimen/text_normal"
+
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="16dp">
+
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mobile Number:"
+                            android:textColor="@color/text_overall"
+                            android:textSize="@dimen/text_normal"
+
+                            />
+
+
+                        <EditText
+                            android:id="@+id/mNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColorHint="@color/text_dim"
+                            android:hint="(+65) 9123 4565"
+                            android:textSize="@dimen/text_normal"
+                            android:textColor="@color/text_overall"
+
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+
+                        >
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date of Birth :"
+                            android:textColor="@color/text_overall"
+                            android:textSize="@dimen/text_normal"
+
+
+                            />
+
+                        <TextView
+                            android:layout_marginTop="8dp"
+                            android:id="@+id/mDateOfBirth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint=" 00-00-0000 "
+                            android:textSize="@dimen/text_normal"
+                            android:textColor="@color/text_overall"
+                            android:textColorHint="@color/text_dim"
+
+                            />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+
+                        >
+
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Gender :"
+                                android:textColor="@color/text_overall"
+                                android:textSize="@dimen/text_normal"
+                                android:layout_gravity="start"
+
+
+                                />
+
+
+                            <EditText
+                                android:layout_marginLeft="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/gender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/text_overall"
+                                android:textSize="@dimen/text_normal"
+                                android:background="@null"
+                                />
+
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical"
+                        >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hobbies:"
+                                android:textColor="@color/text_overall"
+                                android:textSize="@dimen/text_normal"
+                                android:layout_gravity="start"
+
+                                />
+
+                            <Button
+                                android:id="@+id/mHobbies"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="View"
+                                android:textSize="@dimen/text_dim"
+                                android:backgroundTint="@color/main_top_own"
+                                />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        >
+
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+
+                            <Button
+                                android:id="@+id/btn_save"
+                                android:layout_marginTop="8dp"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:text="Save"
+                                android:textSize="@dimen/text_dim"
+                                android:backgroundTint="@color/main_top_own"
+                                android:layout_gravity="end"
+                                />
+
+                        </FrameLayout>
+
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

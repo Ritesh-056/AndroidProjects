@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_white_own"
+    android:padding="8dp"
+    tools:context=".MainActivity">
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/back"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Getting started "
+                    android:textColor="@color/text_overall"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_heading"
+
+                    />
+
+
+
+                <TextView
+                    android:layout_below="@id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create an account"
+                    android:textColor="@color/text_dim"
+                    android:textSize="@dimen/text_dim"
+                    android:textAlignment="center"
+
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:layout_alignParentBottom="true"
+
+     >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username :"
+                    android:textColor="@color/text_overall"
+                    android:textSize="@dimen/text_normal"
+                    />
+
+
+                <EditText
+                    android:id="@+id/mUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#9E8B73"
+                    android:textColor="@color/text_overall"
+                    android:hint="username"
+                    android:textSize="@dimen/text_normal"
+                  />
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#9E8B73"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile Number :"
+                    android:textColor="@color/text_overall"
+                    android:textSize="@dimen/text_normal"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/mNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="phone number "
+                    android:paddingLeft="8dp"
+                    android:textSize="@dimen/text_normal"
+                    android:inputType="number"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth :"
+                    android:textColor="@color/text_overall"
+                    android:textSize="@dimen/text_normal"
+
+                    />
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/mDateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint=" 00-00-0000 "
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/text_overall"
+                    android:textColorHint="@color/text_dim"
+
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender :"
+                    android:textColor="@color/text_overall"
+                    android:textSize="@dimen/text_normal"
+                    />
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+
+
+                    <ImageView
+                        android:id="@+id/gMale"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/unselected_drawable"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/man" />
+
+
+                    <ImageView
+                        android:id="@+id/gFemale"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/unselected_drawable"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:src="@drawable/woman"
+
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Log Out"
+                android:background="@drawable/arrow_backgroud"
+                android:textColor="@color/background_white_own"
+                android:textSize="@dimen/text_dim" />
+
+
+
+
+            <ImageView
+                android:id="@+id/rArrow"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center|end"
+                android:padding="2dp"
+                android:src="@drawable/ic_arrow_right"
+                android:background="@drawable/arrow_backgroud"
+                />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

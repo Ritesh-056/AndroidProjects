@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_white_own"
+    android:padding="8dp"
+    tools:context=".LoginActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="32dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Getting started "
+                    android:textColor="@color/text_overall"
+                    android:textSize="@dimen/text_heading"
+                    android:textAlignment="center"
+
+                    />
+
+
+
+                <TextView
+                    android:layout_below="@id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sign-in methods"
+                    android:textColor="@color/text_dim"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/text_dim"
+
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/back"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <Button
+
+        android:id="@+id/btn_google"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:text="Google Login"
+        android:layout_centerInParent="true"
+        android:background="@color/main_top_own"
+        android:textSize="@dimen/text_dim"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/icon_google"
+        />
+
+
+    <Button
+        android:background="@color/main_top_own"
+        android:id="@+id/login_button"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/btn_google"
+        android:text="Facebook Login"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/icon_facebook"
+        android:textSize="@dimen/text_dim"
+        android:textStyle="bold"
+      />
+
+
+    <Button
+        android:background="@color/main_top_own"
+        android:layout_width="330dp"
+        android:layout_marginTop="8dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_phoneNumber"
+        android:text="Phone Number"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/login_button"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/icon_phone"
+        android:textSize="@dimen/text_dim"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:background="@color/main_top_own"
+        android:layout_marginTop="8dp"
+        android:id="@+id/btn_email_password"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:text="Email-Password"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/btn_phoneNumber"
+        android:textAllCaps="false"
+        android:drawableLeft="@drawable/icon_email"
+        android:textSize="@dimen/text_dim"
+        android:textStyle="bold"
+        />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Socialize</string>
+
+    <string name="facebook_app_id">127974942629188</string>
+    <string name="fb_login_protocol_scheme">fb127974942629188</string>
+
+
+    <string name="profile_detail">Choose your favorite hobbies? </string>
+    <string name="new_content">You may choose more than ONE or not choose at all..</string>
+    <string name="content_footer">*Note that you can change this later under -My Profile-</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_socialize_fragment">SocializeFragment</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="error_gif">  Error in the giff </string>
+    <string name="tab_text_1">Current Chat</string>
+    <string name="tab_text_2">Find Friends</string>
+
+
+    <string-array name="gender">
+
+        <item> Male</item>
+        <item> Female</item>
+        <item> Others</item>
+
+    </string-array>
+
+
+</resources>

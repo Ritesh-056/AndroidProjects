@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark_white_own"
+    android:padding="8dp"
+    android:id="@+id/main"
+    tools:context=".PhoneNumberActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/top"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/hello"
+
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="100dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/back"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number Auth "
+                    android:textColor="@color/text_overall"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_heading"
+
+                    />
+
+
+
+                <TextView
+                    android:layout_below="@id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verify Phone number"
+                    android:textColor="@color/text_dim"
+                    android:textSize="@dimen/text_dim"
+                    android:textAlignment="center"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/mobile_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top"
+        android:layout_marginTop="16dp"
+        >
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="220dp"
+            android:src="@drawable/ic_phone_final"
+            android:layout_centerHorizontal="true"
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mobile_icon"
+        android:layout_centerInParent="true"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        >
+
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/country_code"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/text_normal"
+            app:ccp_autoDetectCountry="true"
+            app:ccp_showNameCode="true"
+            app:ccpDialog_textColor="@color/text_overall"
+            android:layout_centerHorizontal="true"
+            app:ccp_textSize="@dimen/text_dim"
+            />
+
+        <LinearLayout
+            android:layout_below="@id/country_code"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code"
+            android:orientation="horizontal"
+            android:background="@drawable/item_list_background"
+            >
+
+            <EditText
+                android:padding="8dp"
+                android:id="@+id/otp_phone"
+                android:textSize="@dimen/text_normal"
+                android:hint="Enter your Phone number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:inputType="phone"
+                android:background="@null"
+                />
+
+
+
+
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/code"
+            android:layout_marginTop="8dp"
+            >
+            <TextView
+                android:id="@+id/already_otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Already have OTP ?"
+                android:textColor="@color/main_top_own"
+                android:textSize="@dimen/text_dim"
+                android:layout_gravity="end"
+
+                />
+
+        </FrameLayout>
+
+
+
+        <Button
+
+            android:id="@+id/btn_continue"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/otp"
+            android:backgroundTint="@color/main_top_own"
+            android:text="Continue"
+            android:textSize="@dimen/text_dim"
+            android:layout_marginTop="8dp" />
+
+
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/lArrow"
+        android:padding="2dp"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_arrow_left"
+        android:background="@drawable/arrow_backgroud"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center|start"
+
+        />
+</RelativeLayout>

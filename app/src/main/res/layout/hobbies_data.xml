@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+     android:background="@color/background_dark_white_own"
+   >
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hobbies"
+            android:textAlignment="center"
+            android:textColor="@color/text_main"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_heading"
+            />
+
+
+
+        <TextView
+            android:layout_below="@id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="It helps to chat with peoples having same hobbies."
+            android:textColor="@color/text_dim"
+            android:textSize="@dimen/text_dim"
+            android:layout_gravity="center"
+
+            />
+
+    </LinearLayout>
+
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/recyclerView"
+         android:layout_marginTop="32dp"
+       android:layout_below="@id/content"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/lArrow"
+            android:padding="2dp"
+            android:layout_gravity="center|start"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_arrow_left"
+            android:background="@drawable/arrow_backgroud"
+            />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:id="@+id/float_add"
+            android:src="@drawable/ic_baseline_add_24"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@android:color/white"
+            />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

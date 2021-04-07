@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="8dp"
+    >
+
+    <RelativeLayout
+
+        android:padding="8dp"
+        android:id="@+id/main_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_list_background"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/top"
+            >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+    >
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_friend_profile"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/back"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@color/main_top_own"
+
+                        />
+
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:textSize="@dimen/text_normal"
+                        android:padding="8dp"
+                        android:textColor="@color/text_overall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Singing / Dancing"
+                        android:layout_gravity="center"
+
+                        />
+
+
+
+                    <ImageView
+                        android:id="@+id/imgMsgIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:text="Delete this"
+                        android:src="@drawable/ic_baseline_message_24"
+                        android:layout_gravity="center|end"
+                        android:layout_marginRight="16dp"
+                        />
+
+                </FrameLayout>
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
