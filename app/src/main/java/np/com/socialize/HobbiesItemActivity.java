@@ -33,16 +33,12 @@ import np.com.socialize.hobbies.HobbiesAdapter;
 public class HobbiesItemActivity extends AppCompatActivity  implements OnItemCheckInterface {
 
 
-    RecyclerView recyclerView;
-    FloatingActionButton float_add;
-
-    FirebaseFirestore db;
-    FirebaseAuth mAuth;
-
-    ArrayList<CategoryModel>  mhobbies;
-
+     RecyclerView recyclerView;
+     FloatingActionButton float_add;
+     FirebaseFirestore db;
+     FirebaseAuth mAuth;
+     ArrayList<CategoryModel>  mhobbies;
      ImageView lArrow;
-     ActivityGeneric activityGeneric;
 
 
 
@@ -54,13 +50,10 @@ public class HobbiesItemActivity extends AppCompatActivity  implements OnItemChe
         recyclerView =findViewById(R.id.recyclerView);
         float_add = findViewById(R.id.float_add);
         lArrow = findViewById(R.id.lArrow);
-
-
         db =FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
 
         load_data();
 

@@ -22,10 +22,7 @@ public class PhoneNumberActivity extends AppCompatActivity {
     EditText otp_phone;
     private FirebaseAuth mAuth;
     TextView already_otp;
-
-    ActivityGeneric activityGeneric;
     ImageView lArrow;
-
     CountryCodePicker country_code;
 
 
@@ -39,6 +36,8 @@ public class PhoneNumberActivity extends AppCompatActivity {
        already_otp = findViewById(R.id.already_otp);
        lArrow = findViewById(R.id.lArrow);
        country_code = findViewById(R.id.country_code);
+
+
 
 
         lArrow.setOnClickListener(new View.OnClickListener() {

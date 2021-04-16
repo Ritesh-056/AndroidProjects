@@ -16,8 +16,6 @@ public class CompletedProfileCategory extends AppCompatActivity {
     Button btn_done;
 
 
-    ActivityGeneric activityGeneric;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

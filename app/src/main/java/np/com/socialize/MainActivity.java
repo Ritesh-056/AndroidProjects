@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -36,15 +35,12 @@ public class MainActivity extends AppCompatActivity {
    ImageView gMale,gFemale,rArrow;
    Button btn_logout;
    Boolean isMale =  null;
-
    UserDataViewModel userDataViewModel;
+   AlertDialog.Builder builder1;
+   User mUser;
+   private static final String TAG = "MainActivity";
 
 
-    AlertDialog.Builder builder1;
-    ActivityGeneric activityGeneric;
-
-    User mUser;
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

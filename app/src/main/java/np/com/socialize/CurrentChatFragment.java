@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import np.com.socialize.category.CurrentChatAdapter;
-import np.com.socialize.category.FindFriendsAdapter;
-import np.com.socialize.category.User;
 import np.com.socialize.category.UserDataViewModel;
 
 public class CurrentChatFragment extends Fragment  implements CurrentChatAdapter.CheckedMessageIconInterface {

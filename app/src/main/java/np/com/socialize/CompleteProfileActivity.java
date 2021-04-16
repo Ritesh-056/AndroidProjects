@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -28,7 +26,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import np.com.socialize.category.CategoryAdapter;
 import np.com.socialize.category.CategoryModel;
@@ -37,21 +34,14 @@ import np.com.socialize.category.OnItemCheckInterface;
 
 public class CompleteProfileActivity extends AppCompatActivity {
 
-    ActivityGeneric activityGeneric;
     int success=0;
-
-
-
     ProgressBar progress_bar;
     CategoryViewModel categoryViewModel;
     RecyclerView recyclerView;
     Button btn_save;
     FirebaseFirestore db;
     FirebaseAuth mAuth;
-
     ImageView lArrow;
-
-
     OnItemCheckInterface onItemCheckInterface;
     ArrayList<CategoryModel> categoryModels;
 

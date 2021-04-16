@@ -1,7 +1,6 @@
 package np.com.socialize;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -31,14 +30,9 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Arrays;
-import java.util.Objects;
 
 import np.com.socialize.category.User;
 
@@ -52,16 +46,11 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseUser mUser;
     FirebaseFirestore mDocument;
-
-
     User userDocument;
-
-
     Button  loginButton,btn_google,btn_phoneNumber,btn_email_password;
     GoogleSignInClient mGoogleSignInClient;
     CallbackManager mCallbackManager;
 
-    ActivityGeneric activityGeneric;
 
 
 
@@ -78,10 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton =  findViewById(R.id.login_button);
         btn_phoneNumber = findViewById(R.id.btn_phoneNumber);
         btn_email_password = findViewById(R.id.btn_email_password);
-
         mCallbackManager = CallbackManager.Factory.create();
-
-
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mDocument=FirebaseFirestore.getInstance();

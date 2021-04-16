@@ -1,8 +1,5 @@
 package np.com.socialize.category;
 
-import android.net.LinkAddress;
-import android.util.LayoutDirection;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,10 +25,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
 
     ArrayList<ChatMessage> messages;
     String userID ;
-
     ChatMessage message;
-
     OnChatItemClick onChatItemClick;
+
+
+
 
     public ChatAdapter(ArrayList<ChatMessage> mylist,OnChatItemClick onclickedChatItem) {
 
@@ -152,8 +149,8 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
               Picasso
                     .get()
                     .load(chatMessage.getProfile())
-                      .placeholder(R.drawable.back)
-                    .into(img_hobbies);
+                      .placeholder(R.drawable.loading)
+                      .into(img_hobbies);
 
 
 

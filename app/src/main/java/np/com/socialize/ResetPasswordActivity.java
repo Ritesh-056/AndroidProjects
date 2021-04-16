@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -26,7 +25,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
     String email;
     FirebaseAuth auth;
     ImageView lArrow;
-    ActivityGeneric activityGeneric;
     ProgressBar progress_bar;
 
 
