@@ -62,7 +62,7 @@ public class SocializeDashboardActivity extends AppCompatActivity {
 
                         getSupportFragmentManager()
                                 .beginTransaction()
-                                .replace(R.id.fragment,new SettingFragment())
+                                .replace(R.id.fragment,new UpdateProfileFragment())
                                 .commit();
                         break;
 

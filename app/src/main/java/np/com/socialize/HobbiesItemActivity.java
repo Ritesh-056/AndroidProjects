@@ -76,6 +76,7 @@ public class HobbiesItemActivity extends AppCompatActivity  implements OnItemChe
 
 
                  Intent intent = new Intent(HobbiesItemActivity.this,CompleteProfileActivity.class);
+                 intent.putExtra("add_hobbies",true);
                  startActivity(intent);
                  finish();
             }

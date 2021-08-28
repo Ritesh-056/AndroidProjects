@@ -32,7 +32,7 @@ import np.com.socialize.category.CategoryModel;
 import np.com.socialize.category.CategoryViewModel;
 import np.com.socialize.category.OnItemCheckInterface;
 
-public class CompleteProfileActivity extends AppCompatActivity {
+public class CompleteProfileActivity<add_hobbies> extends AppCompatActivity {
 
     int success=0;
     ProgressBar progress_bar;
@@ -48,6 +48,10 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
 
     HashMap<String,CategoryModel> selectedMap = new HashMap<>();
+    boolean add_hobbies ;
+
+
+
 
 
 
@@ -57,6 +61,12 @@ public class CompleteProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_profile);
+
+
+        Intent intent = getIntent();
+        add_hobbies = intent.getBooleanExtra("add_hobbies", false);
+
+
 
         lArrow = findViewById(R.id.lArrow);
 
@@ -145,9 +155,21 @@ public class CompleteProfileActivity extends AppCompatActivity {
 
                                     progress_bar.setVisibility(View.INVISIBLE);
                                     Toast.makeText(CompleteProfileActivity.this, "Hobbies Added Successful", Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(CompleteProfileActivity.this,CompletedProfileCategory.class);
-                                        startActivity(intent);
-                                        finish();
+
+                                    if(add_hobbies) {
+                                         System.out.println("=============");
+                                         System.out.println(add_hobbies);
+                                         System.out.println("=============");
+
+
+                                         Intent intent = new Intent(CompleteProfileActivity.this,SocializeDashboardActivity.class);
+                                         startActivity(intent);
+                                     }else{
+                                         Intent intent = new Intent(CompleteProfileActivity.this,CompletedProfileCategory.class);
+                                         startActivity(intent);
+                                     }
+                                    finish();
+
 
                                 }
                             }

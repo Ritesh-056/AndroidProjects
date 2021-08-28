@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
                           Toast.makeText(MainActivity.this, "Selected is " +isMale, Toast.LENGTH_SHORT).show();
 
                           Intent intent= new Intent(MainActivity.this,CompleteProfileActivity.class);
+                          intent.putExtra("add_hobbies",false);
                           startActivity(intent);
                           finish();
                       }

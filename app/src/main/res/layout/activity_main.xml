@@ -115,6 +115,7 @@
 
                 <EditText
                     android:id="@+id/mUsername"
+                    android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="#9E8B73"
@@ -148,6 +149,7 @@
 
 
                 <EditText
+                    android:maxLines="1"
                     android:id="@+id/mNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

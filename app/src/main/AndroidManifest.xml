@@ -3,38 +3,39 @@
     package="np.com.socialize">
 
     <application
-        android:name=".MainApplication"
+        android:name="np.com.socialize.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Socialize">
-        <activity android:name=".EmptyActivity" android:exported="true"></activity>
-        <activity android:name=".ChatActivity" />
+        <activity android:name="np.com.socialize.EmptyActivity"
+            android:exported="true"></activity>
+        <activity android:name="np.com.socialize.ChatActivity" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".HobbiesItemActivity" />
-        <activity android:name=".AlreadyOtpActivity" />
+        <activity android:name="np.com.socialize.HobbiesItemActivity" />
+        <activity android:name="np.com.socialize.AlreadyOtpActivity" />
         <activity
-            android:name=".SocializeDashboardActivity"
+            android:name="np.com.socialize.SocializeDashboardActivity"
             android:exported="true" />
-        <activity android:name=".CompletedProfileCategory" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".CompleteProfileActivity" />
-        <activity android:name=".SplashScreen" />
+        <activity android:name="np.com.socialize.CompletedProfileCategory" />
+        <activity android:name="np.com.socialize.ResetPasswordActivity" />
+        <activity android:name="np.com.socialize.CompleteProfileActivity" />
+        <activity android:name="np.com.socialize.SplashScreen" />
 
-        <activity android:name=".EmailPassActivity" />
+        <activity android:name="np.com.socialize.EmailPassActivity" />
 
-        <activity android:name=".OtpVerifyActivity" />
-        <activity android:name=".PhoneNumberActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="np.com.socialize.OtpVerifyActivity" />
+        <activity android:name="np.com.socialize.PhoneNumberActivity" />
+        <activity android:name="np.com.socialize.LoginActivity" />
+        <activity android:name="np.com.socialize.MainActivity" />
         <activity-alias
             android:name=".Launcher"
-            android:targetActivity=".SplashScreen">
+            android:targetActivity="np.com.socialize.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

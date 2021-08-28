@@ -54,7 +54,7 @@ import np.com.socialize.category.UserDataViewModel;
 
 import static android.app.Activity.RESULT_OK;
 
-public class SettingFragment extends Fragment {
+public class UpdateProfileFragment extends Fragment {
 
 
     private static final String TAG = "SettingFragment";
@@ -350,10 +350,8 @@ public class SettingFragment extends Fragment {
                             }
                             });
 
-        ActivityCompat
-                .requestPermissions(
-                        getActivity(),
-                        new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
+        ActivityCompat.requestPermissions(getActivity(),
+                new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE },
                         STORAGE_PERMISSION_CODE);
 
         }
@@ -362,7 +360,7 @@ public class SettingFragment extends Fragment {
 
         public void choose() {
 
-            Matisse.from(SettingFragment.this)
+            Matisse.from(UpdateProfileFragment.this)
                     .choose(MimeType.ofImage(), false)
                     .countable(false)
                     .maxSelectable(1)
