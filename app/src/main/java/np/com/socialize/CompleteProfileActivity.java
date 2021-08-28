@@ -157,11 +157,7 @@ public class CompleteProfileActivity<add_hobbies> extends AppCompatActivity {
                                     Toast.makeText(CompleteProfileActivity.this, "Hobbies Added Successful", Toast.LENGTH_SHORT).show();
 
                                     if(add_hobbies) {
-                                         System.out.println("=============");
-                                         System.out.println(add_hobbies);
-                                         System.out.println("=============");
-
-
+                                  
                                          Intent intent = new Intent(CompleteProfileActivity.this,SocializeDashboardActivity.class);
                                          startActivity(intent);
                                      }else{
