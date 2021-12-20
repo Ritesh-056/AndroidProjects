@@ -158,8 +158,8 @@ public class CompleteProfileActivity<add_hobbies> extends AppCompatActivity {
 
                                     if(add_hobbies) {
                                   
-                                         Intent intent = new Intent(CompleteProfileActivity.this,SocializeDashboardActivity.class);
-                                         startActivity(intent);
+                                         Intent intent1 = new Intent(CompleteProfileActivity.this,SocializeDashboardActivity.class);
+                                         startActivity(intent1);
                                      }else{
                                          Intent intent = new Intent(CompleteProfileActivity.this,CompletedProfileCategory.class);
                                          startActivity(intent);

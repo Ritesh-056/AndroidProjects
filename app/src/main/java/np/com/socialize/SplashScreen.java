@@ -38,7 +38,7 @@ public class SplashScreen extends AppCompatActivity {
 
         auth =FirebaseAuth.getInstance();
         mUser = auth.getCurrentUser();
-       mDocument=FirebaseFirestore.getInstance();
+        mDocument=FirebaseFirestore.getInstance();
 
         Thread mythread = new Thread(){
 
@@ -76,9 +76,11 @@ public class SplashScreen extends AppCompatActivity {
             Log.e(TAG, "printHashKey()", e);
         }
     }
+
+
     public  void document_check(){
 
-
+        // is app user is not null.
        if(mUser != null){
 
            DocumentReference docRef = mDocument.collection("users").document(mUser.getUid());
@@ -94,18 +96,15 @@ public class SplashScreen extends AppCompatActivity {
                            startActivity(intent);
                            finish();
 
-                       } else {
-                           // Log.d(TAG, "No such document");
-
-                           Intent intent= new Intent(SplashScreen.this,MainActivity.class);
-                           startActivity(intent);
-                           finish();
                        }
                    }
                }
            });
 
        } else{
+
+
+           //goto login activity
 
            Intent intent = new Intent(SplashScreen.this,LoginActivity.class);
            startActivity(intent);

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
    TextView mDateOfBirth;
    ImageView gMale,gFemale,rArrow;
    Button btn_logout;
-   Boolean isMale =  null;
+   Boolean isMale = true;
    UserDataViewModel userDataViewModel;
    AlertDialog.Builder builder1;
    User mUser;
@@ -47,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         userDataViewModel = new ViewModelProvider(this).get(UserDataViewModel.class);
+        userDataViewModel = new ViewModelProvider(this).get(UserDataViewModel.class);
         userDataViewModel.getData();
-
         mUsername = findViewById(R.id.mUsername);
         mNumber = findViewById(R.id.mNumber);
         mDateOfBirth = findViewById(R.id.mDateOfBirth);
@@ -120,16 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
                     }
 
-
-                    if (user.getGender() !=null){
-
-                    }
-
                     if (user.getDateofBirth() !=null){
-
-
                         mDateOfBirth.setText(user.getDateofBirth());
-
                     }
 
 
@@ -227,9 +218,7 @@ public class MainActivity extends AppCompatActivity {
 
                 gMale.setBackground(ContextCompat.getDrawable(MainActivity.this,R.drawable.selected_drawable));
                 gFemale.setBackground(ContextCompat.getDrawable(MainActivity.this,R.drawable.unselected_drawable));
-
-
-               isMale=true;
+                isMale=true;
             }
 
 
@@ -255,8 +244,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         rArrow.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
 
                 if(mUsername.getText().toString().length() == 0 &&
                         mNumber.getText().toString().length() == 0 &&
@@ -279,7 +270,6 @@ public class MainActivity extends AppCompatActivity {
 
                 else if(isMale == null){
                     Toast.makeText(MainActivity.this, "Gender should be selected", Toast.LENGTH_SHORT).show();
-
                 }
 
                 else {
@@ -289,24 +279,20 @@ public class MainActivity extends AppCompatActivity {
                         mUser =new User();
                     }
 
-                    mUser.setGender(mDateOfBirth.getText().toString());
-                    mUser.setName(mUsername.getText().toString());
-                    mUser.setPhoneNumber(mNumber.getText().toString());
-                    mUser.setDateofBirth(mDateOfBirth.getText().toString());
 
                     String  gender;
 
                     if(isMale){
-                         gender="Male";
+                        gender="Male";
                     }else{
 
                         gender ="Female";
                     }
 
+                    mUser.setName(mUsername.getText().toString());
+                    mUser.setPhoneNumber(mNumber.getText().toString());
+                    mUser.setDateofBirth(mDateOfBirth.getText().toString());
                     mUser.setGender(gender);
-
-
-
                     userDataViewModel.addData(mUser);
 
 

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_profile_edit_icon.xml" value="0.32685185185185184" />
+        <entry key="app/src/main/res/drawable/item_list_background.xml" value="0.33487179487179486" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_email_pass.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_empty.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_login_user.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_socialize_dashboard.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/layout/activity_socialize_fragment.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.3328125" />
+        <entry key="app/src/main/res/layout/setting_fragment.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/show_profile_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/single_item_category.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/single_item_chat_message.xml" value="0.18489583333333334" />
+        <entry key="app/src/main/res/layout/single_item_dashboard_hobbies.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/single_item_find_friends_list.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/single_item_hobbies_list.xml" value="0.34010416666666665" />
+        <entry key="app/src/main/res/layout/update_profile_fragment.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -193,8 +193,6 @@
 
                     />
 
-
-
             </LinearLayout>
 
             <LinearLayout
@@ -210,7 +208,6 @@
                     android:textColor="@color/text_overall"
                     android:textSize="@dimen/text_normal"
                     />
-
 
 
                 <LinearLayout

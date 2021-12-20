@@ -23,6 +23,9 @@ import np.com.socialize.PrivateChat;
 
 public class UserDataViewModel extends ViewModel {
 
+
+
+
     FirebaseFirestore db;
     FirebaseAuth mAuth;
 
@@ -34,24 +37,19 @@ public class UserDataViewModel extends ViewModel {
 
 
 
-    MutableLiveData<List<User>> allUser = new MutableLiveData<>();
 
+    MutableLiveData<List<User>> allUser = new MutableLiveData<>();
 
     public MutableLiveData<List<User>> getAllUser() {
         return allUser;
     }
-
-
-
-
     MutableLiveData<User> currentUser = new MutableLiveData<>();
+
 
     public MutableLiveData<User> getCurrentUser() {
         return currentUser;
     }
-
     MutableLiveData<State> currentState = new MutableLiveData<>();
-
     public MutableLiveData<State> getCurrentState() {
         return currentState;
     }

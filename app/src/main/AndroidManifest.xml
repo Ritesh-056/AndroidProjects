@@ -26,9 +26,7 @@
         <activity android:name="np.com.socialize.ResetPasswordActivity" />
         <activity android:name="np.com.socialize.CompleteProfileActivity" />
         <activity android:name="np.com.socialize.SplashScreen" />
-
         <activity android:name="np.com.socialize.EmailPassActivity" />
-
         <activity android:name="np.com.socialize.OtpVerifyActivity" />
         <activity android:name="np.com.socialize.PhoneNumberActivity" />
         <activity android:name="np.com.socialize.LoginActivity" />

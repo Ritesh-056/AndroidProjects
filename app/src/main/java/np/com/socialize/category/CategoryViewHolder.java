@@ -33,8 +33,8 @@ public class CategoryViewHolder extends RecyclerView.ViewHolder {
         this.onItemCheckInterface = onItemCheckInterface;
 
 
-        db=FirebaseFirestore.getInstance();
-        mAuth =FirebaseAuth.getInstance();
+        db    = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         txtTitle =itemView.findViewById(R.id.txt_live);
         imgLogo=itemView.findViewById(R.id.img_live_logo);

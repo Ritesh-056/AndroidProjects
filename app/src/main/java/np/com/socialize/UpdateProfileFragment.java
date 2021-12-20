@@ -14,6 +14,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -22,11 +24,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,23 +59,23 @@ import np.com.socialize.category.UserDataViewModel;
 
 import static android.app.Activity.RESULT_OK;
 
-public class UpdateProfileFragment extends Fragment {
+public class UpdateProfileFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
 
     private static final String TAG = "SettingFragment";
     FirebaseFirestore db;
     FirebaseAuth mAuth;
     FirebaseUser currenUser;
-    Button mHobbies,btn_save;
+    Button btn_save;
+    ImageView mHobbies;
     CircleImageView profile_image;
     Uri selectedImageUri=null;
     UserDataViewModel userDataViewModel;
     User mUser;
+    String spinnerChooseGender;
 
 
-    Button  btn_logout;
-    EditText gender;
-
+    Button  btn_logout,btnEdit;
     AlertDialog.Builder builder1;
 
     EditText Username;
@@ -81,7 +86,7 @@ public class UpdateProfileFragment extends Fragment {
     InputStream pictureInputStream;
     MutableLiveData<User> currentUser = new MutableLiveData<>();
     ProgressBar progress_bar;
-
+    Spinner spinnerGender ;
 
 
     @Nullable
@@ -89,7 +94,7 @@ public class UpdateProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        return  inflater.inflate(R.layout.setting_fragment,container,false);
+        return  inflater.inflate(R.layout.update_profile_fragment,container,false);
 
     }
 
@@ -107,7 +112,6 @@ public class UpdateProfileFragment extends Fragment {
         mAuth=FirebaseAuth.getInstance();
 
 
-        gender=view.findViewById(R.id.gender);
         mHobbies=view.findViewById(R.id.mHobbies);
         profile_image =view.findViewById(R.id.profile_image);
         mUsername= view.findViewById(R.id.mUsername);
@@ -116,10 +120,19 @@ public class UpdateProfileFragment extends Fragment {
         btn_save=view.findViewById(R.id.btn_save);
         btn_logout=view.findViewById(R.id.btn_logout);
         progress_bar=view.findViewById(R.id.progress_bar);
-
+        btnEdit = view.findViewById(R.id.btnEdit);
         userDataViewModel.getData();
+        spinnerGender = view.findViewById(R.id.spinnerGender);
 
 
+
+        Log.d(TAG, "onFragmentSwitched: Successful");
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.gender, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerGender.setAdapter(adapter);
+        spinnerGender.setOnItemSelectedListener(this);
 
         mDateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +151,7 @@ public class UpdateProfileFragment extends Fragment {
                         datePicker=dialogView.findViewById(R.id.datePicker);
 
                         int mYear =datePicker.getYear();
-                        int mMonth = datePicker.getMonth();
+                        int mMonth = datePicker.getMonth()+1;
                         int mDay=datePicker.getDayOfMonth();
 
 
@@ -233,35 +246,21 @@ public class UpdateProfileFragment extends Fragment {
 
                     }
 
-                    if (user.getGender() !=null){
-
-                       gender.setText(user.getGender());
-                    }
-
 
                     if (user.getDateofBirth() !=null){
-
-
-                        mDateOfBirth.setText(user.getDateofBirth());
-
-                    }
+                        mDateOfBirth.setText(user.getDateofBirth()); }
 
                     if(user.getProfile_photo() != null){
 
                         Picasso
                                 .get()
                                 .load(user.getProfile_photo())
+                                .placeholder(R.drawable.loading)
                                 .into(profile_image);
                     }
-
-
-
                 }
             }
         });
-
-
-
 
 
         btn_save.setOnClickListener(new View.OnClickListener() {
@@ -281,8 +280,8 @@ public class UpdateProfileFragment extends Fragment {
                     mNumber.setError("please insert phone number");
                 } else if (mDateOfBirth.getText().toString().length() == 0) {
                     mDateOfBirth.setError("please insert username");
-                } else if(gender.getText().toString().length() ==0){
-                    gender.setError("please insert gender");
+                } else if(spinnerChooseGender.length() == 0){
+                    Toast.makeText(getActivity(), "Please select gender", Toast.LENGTH_SHORT).show();
                 }
 
                 else {
@@ -295,7 +294,7 @@ public class UpdateProfileFragment extends Fragment {
                     mUser.setDateofBirth(mDateOfBirth.getText().toString());
                     mUser.setName(mUsername.getText().toString());
                     mUser.setPhoneNumber(mNumber.getText().toString());
-                    mUser.setGender(gender.getText().toString());
+                    mUser.setGender(spinnerChooseGender);
 
 
 
@@ -315,7 +314,12 @@ public class UpdateProfileFragment extends Fragment {
                     }
 
 
-                    Toast.makeText(getActivity(),mUser.getName() + " your profile was edited successfully" , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Profile was edited successfully" , Toast.LENGTH_SHORT).show();
+                    FragmentTransaction ft1 = getFragmentManager().beginTransaction();
+                    ShowProfileFragment showProfileFragment = new ShowProfileFragment();
+                    ft1.replace(R.id.fragment, showProfileFragment);
+                    ft1.commit();
+
 
                 }
             }
@@ -385,12 +389,7 @@ public class UpdateProfileFragment extends Fragment {
                         Log.e(TAG, "onCheck: isChecked=" + isChecked);
                     })
                     .forResult(REQUEST_CODE_CHOOSE);
-
-
         }
-
-
-
 
 
         @Override
@@ -400,26 +399,16 @@ public class UpdateProfileFragment extends Fragment {
 
             Log.d(TAG, "onActivityResult: Fragment " + requestCode+ ", " + resultCode);
                         if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
-
-
                             List<Uri> result = Matisse.obtainResult(data);
-
                             Log.d(TAG, "onActivityResult: " + result.size());
 
                             if (result.size() >0){
 
-                                  Uri uri=result.get(0);
-
-
-
+                                Uri uri=result.get(0);
                                 UCrop.of(uri, Uri.fromFile(new File(getContext().getCacheDir(), "temp.jpg")))
                                         .withAspectRatio(1,1)
                                         .start(requireContext(),this);
-
                             }
-
-
-
                         }
 
                         else  if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
@@ -535,6 +524,17 @@ public class UpdateProfileFragment extends Fragment {
 
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        spinnerChooseGender = parent.getItemAtPosition(position).toString();
+        Log.d(TAG, "onItemSelected: "+spinnerChooseGender);
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
 }
 
 

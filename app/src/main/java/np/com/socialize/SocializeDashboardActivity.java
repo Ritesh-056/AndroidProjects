@@ -3,6 +3,7 @@ package np.com.socialize;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,44 +39,27 @@ public class SocializeDashboardActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case R.id.swriz :
-
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.fragment,new SocializeFragment())
-                                .commit();
-
+                        changeFragment(new SocializeFragment());
                         break;
 
 
                     case R.id.chat :
-
-
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.fragment,new ChatFragment())
-                                .commit();
-
+                         changeFragment(new ChatFragment());
                         break;
-
 
                     case R.id.setting :
-
-                        getSupportFragmentManager()
-                                .beginTransaction()
-                                .replace(R.id.fragment,new UpdateProfileFragment())
-                                .commit();
+                        changeFragment(new ShowProfileFragment());
                         break;
-
-
-
-
-
                 }
 
                 return true;
 
             }
         });
+    }
+
+    public void changeFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment, fragment).commit();
     }
 
 

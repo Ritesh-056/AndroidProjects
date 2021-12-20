@@ -77,4 +77,6 @@ dependencies {
 
     //ORM
     implementation 'com.orhanobut:hawk:2.0.1'
+
+    implementation group: 'org.slf4j', name: 'slf4j-android', version: '1.7.26'
 }

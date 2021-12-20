@@ -12,20 +12,18 @@
         android:id="@+id/fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_above="@id/bottomNavigationView"
-        />
+        android:layout_alignParentTop="true" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/socialize_menu"
+        android:layout_alignParentBottom="true"
         android:background="@color/main_top_own"
-        app:itemTextColor="#fff"
         app:itemIconTint="#fff"
-        />
+        app:itemTextColor="#fff"
+        app:menu="@menu/socialize_menu" />
 
 
 </RelativeLayout>

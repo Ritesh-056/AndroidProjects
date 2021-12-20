@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="np.com.socialize.FindFriendFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/setting_fragment">
+        tools:layout="@layout/update_profile_fragment">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
