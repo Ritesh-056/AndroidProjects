@@ -77,6 +77,8 @@ public class EmailPassActivity extends AppCompatActivity {
              }
          });
 
+
+
         forget_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -219,9 +221,10 @@ public class EmailPassActivity extends AppCompatActivity {
 
 
     }
+
+
+
     private  void updateUI(FirebaseUser user){
-
-
 
         if(user!= null && user.isEmailVerified()){
 
@@ -234,20 +237,10 @@ public class EmailPassActivity extends AppCompatActivity {
 
 
 
-
-
-
         // Construct the email link credential from the current URL.
 
 
-    public  void activity(Activity activityTo, Class<MainActivity> activityFrom){
 
-
-        Intent intent = new Intent( activityTo, activityFrom);
-        startActivity(intent);
-        finish();
-
-    }
 
     public  void document_check(FirebaseUser mUser){
 
@@ -280,7 +273,13 @@ public class EmailPassActivity extends AppCompatActivity {
 
 
     }
+    public  void activity(Activity activityTo, Class<MainActivity> activityFrom){
 
 
+        Intent intent = new Intent( activityTo, activityFrom);
+        startActivity(intent);
+        finish();
+
+    }
 
 }

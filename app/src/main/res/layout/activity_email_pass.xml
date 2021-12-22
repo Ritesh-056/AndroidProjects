@@ -120,9 +120,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Enter your email-id"
-                    android:backgroundTint="@color/text_dim"
                     android:textColor="@color/text_overall"
                     android:textSize="@dimen/text_normal"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:background="@drawable/item_list_background"
+
                     />
             </LinearLayout>
 
@@ -153,10 +157,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint=" ********"
-                    android:backgroundTint="@color/text_dim"
                     android:textColor="@color/text_overall"
                     android:textSize="@dimen/text_normal"
                     android:inputType="textPassword"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:background="@drawable/item_list_background"
+
                     />
 
 

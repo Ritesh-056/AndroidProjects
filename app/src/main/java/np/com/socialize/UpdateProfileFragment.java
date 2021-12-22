@@ -138,6 +138,7 @@ public class UpdateProfileFragment extends Fragment implements AdapterView.OnIte
             @Override
             public void onClick(View v) {
 
+
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
 
                 ViewGroup viewGroup =v.findViewById(android.R.id.content);
@@ -154,10 +155,7 @@ public class UpdateProfileFragment extends Fragment implements AdapterView.OnIte
                         int mMonth = datePicker.getMonth()+1;
                         int mDay=datePicker.getDayOfMonth();
 
-
                         mDateOfBirth.setText(mDay+"-"+mMonth+"-"+mYear);
-
-
                     }
                 })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -174,7 +172,6 @@ public class UpdateProfileFragment extends Fragment implements AdapterView.OnIte
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 builder1 = new AlertDialog.Builder(getActivity());
 

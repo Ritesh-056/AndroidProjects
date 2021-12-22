@@ -57,7 +57,9 @@ public class PhoneNumberActivity extends AppCompatActivity {
            public void onClick(View v) {
 
               // getSupportFragmentManager().beginTransaction().replace(R.id.main, new OtpVerificationFragment()).commit();
-              activity(PhoneNumberActivity.this,AlreadyOtpActivity.class);
+               Intent intent= new Intent(PhoneNumberActivity.this, AlreadyOtpActivity.class);
+               startActivity(intent);
+               finish();
            }
        });
 
@@ -107,17 +109,6 @@ public class PhoneNumberActivity extends AppCompatActivity {
        });
 
     }
-
-
-    public  void activity(Activity activityTo, Class<AlreadyOtpActivity> activityFrom){
-
-
-        Intent intent = new Intent( activityTo, activityFrom);
-        startActivity(intent);
-        finish();
-
-    }
-
 
 
 }

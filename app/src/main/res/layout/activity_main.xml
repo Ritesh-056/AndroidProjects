@@ -103,28 +103,27 @@
                 android:paddingTop="16dp">
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Username :"
                     android:textColor="@color/text_overall"
-                    android:textSize="@dimen/text_normal"
-                    />
+                    android:textSize="@dimen/text_normal" />
 
 
                 <EditText
                     android:id="@+id/mUsername"
-                    android:maxLines="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="#9E8B73"
-                    android:textColor="@color/text_overall"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/item_list_background"
                     android:hint="username"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/text_overall"
                     android:textSize="@dimen/text_normal"
-                  />
 
-
+                    />
 
 
             </LinearLayout>
@@ -149,15 +148,19 @@
 
 
                 <EditText
-                    android:maxLines="1"
                     android:id="@+id/mNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/item_list_background"
                     android:hint="phone number "
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:padding="16dp"
                     android:paddingLeft="8dp"
                     android:textSize="@dimen/text_normal"
-                    android:inputType="number"
+
                     />
 
 
@@ -182,14 +185,18 @@
                     />
 
                 <TextView
-                    android:layout_marginTop="8dp"
                     android:id="@+id/mDateOfBirth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint=" 00-00-0000 "
-                    android:textSize="@dimen/text_normal"
                     android:textColor="@color/text_overall"
                     android:textColorHint="@color/text_dim"
+                    android:textSize="@dimen/text_normal"
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:background="@drawable/item_list_background"
+
 
                     />
 
@@ -206,15 +213,13 @@
                     android:layout_height="wrap_content"
                     android:text="Gender :"
                     android:textColor="@color/text_overall"
-                    android:textSize="@dimen/text_normal"
-                    />
+                    android:textSize="@dimen/text_normal" />
 
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center">
-
 
 
                     <ImageView
@@ -245,7 +250,6 @@
 
 
                 </LinearLayout>
-
 
 
             </LinearLayout>

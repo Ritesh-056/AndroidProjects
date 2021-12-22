@@ -198,8 +198,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 AlertDialog alert1 =builder1.create();
-
-
                 btn_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

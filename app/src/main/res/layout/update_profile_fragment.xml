@@ -97,7 +97,6 @@
                 android:id="@+id/down"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
 
                 >
 
@@ -139,10 +138,9 @@
                 </LinearLayout>
 
 
-
-
-
                 <LinearLayout
+                    android:padding="16dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/main_part"
@@ -152,9 +150,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="8dp">
-
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical">
 
 
                         <TextView
@@ -162,23 +159,21 @@
                             android:layout_height="wrap_content"
                             android:text="Name "
                             android:textColor="@color/text_main"
-                            android:textSize="@dimen/text_dim"
-                            />
+                            android:textSize="@dimen/text_dim" />
 
 
                         <EditText
                             android:id="@+id/mUsername"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColorHint="@color/text_dim"
+                            android:layout_marginTop="8dp"
+                            android:maxLines="1"
+                            android:background="@drawable/item_list_background"
                             android:hint="Tan Ah Hock"
                             android:padding="16dp"
-                            android:layout_marginTop="8dp"
-                            android:background="@drawable/item_list_background"
                             android:textColor="@color/text_overall"
-                            android:textSize="@dimen/text_normal"
-                            />
-
+                            android:textColorHint="@color/text_dim"
+                            android:textSize="@dimen/text_normal" />
 
 
                     </LinearLayout>
@@ -186,9 +181,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginTop="16dp">
-
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
 
 
                         <TextView
@@ -205,14 +199,14 @@
                             android:id="@+id/mNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColorHint="@color/text_dim"
-                            android:hint="(+65) 9123 4565"
-                            android:textSize="@dimen/text_normal"
-                            android:textColor="@color/text_overall"
-                            android:padding="16dp"
                             android:layout_marginTop="8dp"
                             android:background="@drawable/item_list_background"
-                            />
+                            android:hint="(+65) 9123 4565"
+                            android:maxLines="1"
+                            android:padding="16dp"
+                            android:textColor="@color/text_overall"
+                            android:textColorHint="@color/text_dim"
+                            android:textSize="@dimen/text_normal" />
 
                     </LinearLayout>
 
@@ -237,16 +231,17 @@
                             />
 
                         <TextView
-                            android:layout_marginTop="8dp"
                             android:id="@+id/mDateOfBirth"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/item_list_background"
                             android:hint=" 00-00-0000 "
-                            android:textSize="@dimen/text_normal"
+                            android:maxLines="1"
+                            android:padding="16dp"
                             android:textColor="@color/text_overall"
                             android:textColorHint="@color/text_dim"
-                            android:padding="16dp"
-                            android:background="@drawable/item_list_background"
+                            android:textSize="@dimen/text_normal"
 
                             />
 
@@ -258,35 +253,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
 
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="start"
                             android:text="Hobbies"
                             android:textColor="@color/text_main"
                             android:textSize="@dimen/text_dim"
-                            android:layout_gravity="start"
 
                             />
 
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            xmlns:app="http://schemas.android.com/apk/res-auto"
-                            android:layout_marginLeft="36dp"
-                            android:layout_gravity="center"
+                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                             android:id="@+id/mHobbies"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_edit_profile_hobbies"
-                            />
-
-
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="36dp"
+                            android:src="@drawable/ic_edit_profile_hobbies" />
 
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -295,25 +286,21 @@
 
                         >
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Gender "
-                                android:textColor="@color/text_main"
-                                android:textSize="@dimen/text_dim"
-                                android:layout_gravity="start"
-                                />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="Gender "
+                            android:textColor="@color/text_main"
+                            android:textSize="@dimen/text_dim" />
 
-                            <Spinner
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="8dp"
-                                android:id="@+id/spinnerGender"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                />
+                        <Spinner
+                            android:id="@+id/spinnerGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp" />
                     </LinearLayout>
-
-
 
 
                     <LinearLayout
@@ -321,21 +308,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="64dp"
-                        android:orientation="horizontal"
-                        >
+                        android:orientation="horizontal">
 
 
-                            <Button
-                                android:id="@+id/btn_save"
-                                android:layout_width="match_parent"
-                                android:layout_height="55dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginRight="16dp"
-                                android:text="Save"
-                                android:textSize="@dimen/text_dim"
-                                android:backgroundTint="@color/main_top_own"
-                                android:layout_gravity="center"
-                                />
+                        <Button
+                            android:id="@+id/btn_save"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:backgroundTint="@color/main_top_own"
+                            android:text="Save"
+                            android:textSize="@dimen/text_dim" />
 
 
                     </LinearLayout>

@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Socialize</string>
 
-    <string name="facebook_app_id">127974942629188</string>
-    <string name="fb_login_protocol_scheme">fb127974942629188</string>
+    <string name="facebook_app_id">436645088139355</string>
+    <string name="fb_login_protocol_scheme">fb436645088139355</string>
 
 
     <string name="profile_detail">Choose your favorite hobbies? </string>

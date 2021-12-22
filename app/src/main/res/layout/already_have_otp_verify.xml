@@ -115,19 +115,19 @@
 
 
         <EditText
-            android:layout_below="@id/text"
-            android:padding="8dp"
-            android:maxLines="1"
-            android:layout_marginTop="8dp"
             android:id="@+id/otp_phone"
-            android:textSize="@dimen/text_normal"
-            android:textColor="@color/text_overall"
-            android:hint="Eg. 123456"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
+            android:layout_below="@id/text"
+            android:layout_marginTop="8dp"
             android:background="@drawable/item_list_background"
-            />
+            android:hint="Eg. 123456"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/text_overall"
+            android:textSize="@dimen/text_normal" />
 
         <Button
            android:id="@+id/btn_verify"

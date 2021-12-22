@@ -187,17 +187,12 @@ public class ShowProfileFragment extends Fragment {
                 }
             }
         });
-
     }
-
 
 
     public  void load_hobbies(){
         if(mAuth.getUid() !=null){
-
             mHobbiesRecyclerViewShowProfile.setLayoutManager(new LinearLayoutManager(getContext()));
-
-
             db.collection("users")
                     .document(mAuth.getUid())
                     .collection("hobbies")

@@ -116,7 +116,6 @@ public class AlreadyOtpActivity extends AppCompatActivity {
       }
 
     private void signInUserCredential(PhoneAuthCredential phoneAuthCredential) {
-
         progress_bar.setVisibility(View.VISIBLE);
 
         mAuth=FirebaseAuth.getInstance();
@@ -130,10 +129,18 @@ public class AlreadyOtpActivity extends AppCompatActivity {
 
                             Toast.makeText(AlreadyOtpActivity.this, "Verification Completed", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(AlreadyOtpActivity.this,MainActivity.class);
+//                            Intent intent = new Intent(AlreadyOtpActivity.this,MainActivity.class);
+//                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                            startActivity(intent);
+//                            finish();
+
+
+
+                            Intent intent = new Intent(AlreadyOtpActivity.this,SplashScreen.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                             finish();
+
                         }
 
                         else{

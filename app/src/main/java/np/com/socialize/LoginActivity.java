@@ -30,28 +30,31 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
 
 import np.com.socialize.category.User;
 
+
+//login activity holds google login activity
+
 public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    public  static int RC_SIGN_IN=100;
-    private static String TAG="MainActivity2";
+    public static int RC_SIGN_IN = 100;
+    private static String TAG = "MainActivity2";
     private static final String EMAIL = "email";
 
 
     FirebaseUser mUser;
     FirebaseFirestore mDocument;
     User userDocument;
-    Button  loginButton,btn_google,btn_phoneNumber,btn_email_password;
+    Button loginButton, btn_google, btn_phoneNumber, btn_email_password;
     GoogleSignInClient mGoogleSignInClient;
     CallbackManager mCallbackManager;
-
-
 
 
     @Override
@@ -62,45 +65,35 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
 
 
-
         btn_google = findViewById(R.id.btn_google);
-        loginButton =  findViewById(R.id.login_button);
+        loginButton = findViewById(R.id.login_button);
         btn_phoneNumber = findViewById(R.id.btn_phoneNumber);
         btn_email_password = findViewById(R.id.btn_email_password);
         mCallbackManager = CallbackManager.Factory.create();
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        mDocument=FirebaseFirestore.getInstance();
-
-
-
-
+        mDocument = FirebaseFirestore.getInstance();
 
 
         btn_email_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                 activity(LoginActivity.this,EmailPassActivity.class);
+                activity(LoginActivity.this, EmailPassActivity.class);
             }
         });
-
 
 
         btn_phoneNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent= new Intent(LoginActivity.this,PhoneNumberActivity.class);
+                Intent intent = new Intent(LoginActivity.this, PhoneNumberActivity.class);
                 startActivity(intent);
                 finish();
 
             }
         });
-
-
-
-
 
 
         // Configure Google Sign In
@@ -110,10 +103,9 @@ public class LoginActivity extends AppCompatActivity {
                 .build();
 
 
-
         //google custom button
-         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-         btn_google.setOnClickListener(new View.OnClickListener() {
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        btn_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -123,37 +115,35 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-         //facebook custom button
-         loginButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-
-
-                   LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("email","public_profile"));
-                   LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-                       @Override
-                       public void onSuccess(LoginResult loginResult) {
-                           Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                           handleFacebookAccessToken(loginResult.getAccessToken());
-                       }
-
-                       @Override
-                       public void onCancel() {
-                           Log.d(TAG, "facebook:onCancel");
-                       }
-
-                       @Override
-                       public void onError(FacebookException error) {
-
-                           Log.d(TAG, "facebook:onError", error);
-                       }
-                   });
+        //facebook custom button
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
 
-             }
-         });
+                LoginManager.getInstance().logInWithReadPermissions(LoginActivity.this, Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Log.d(TAG, "facebook:onSuccess:" + loginResult);
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                    }
 
+                    @Override
+                    public void onCancel() {
+                        Log.d(TAG, "facebook:onCancel");
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+
+                        Log.d(TAG, "facebook:onError", error);
+                    }
+                });
+
+
+            }
+        });
 
 
     }
@@ -166,14 +156,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
-        datas(requestCode,resultCode,data);
+        datas(requestCode, resultCode, data);
     }
-
 
 
     private void firebaseAuthWithGoogle(String idToken) {
 
-        Log.d(TAG, "firebaseAuthWithGoogle: "+idToken);
+        Log.d(TAG, "firebaseAuthWithGoogle: " + idToken);
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -204,28 +193,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    public void updateUI(FirebaseUser user){
-
-
-        if(user !=null){
-            if(userDocument !=null){
-
-                Intent intent= new Intent(LoginActivity.this,SocializeDashboardActivity.class);
-                startActivity(intent);
-                finish();
-            }
-            else{
-
-                Intent intent= new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }
-
-    }
-
-
     @Override
     public void onStart() {
         super.onStart();
@@ -233,7 +200,6 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
     }
-
 
 
     // this method  is used for google authentication.
@@ -269,67 +235,74 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-public  void datas(int requestCode, int resultCode, Intent data){
+    public void datas(int requestCode, int resultCode, Intent data) {
 
-    if (requestCode == RC_SIGN_IN) {
-        Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-        try {
-            // Google Sign In was successful, authenticate with Firebase
-            GoogleSignInAccount account = task.getResult(ApiException.class);
-            // Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
-            firebaseAuthWithGoogle(account.getIdToken());
-        } catch (ApiException e) {
-            // Google Sign In failed, update UI appropriately
-            Log.d(TAG, "Google sign in failed", e);
+        if (requestCode == RC_SIGN_IN) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            try {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                // Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
+                firebaseAuthWithGoogle(account.getIdToken());
+            } catch (ApiException e) {
+                // Google Sign In failed, update UI appropriately
+                Log.d(TAG, "Google sign in failed", e);
 
-            // ...
+                // ...
+            }
         }
+
+
     }
 
 
-}
+    public void activity(Activity activityTo, Class<EmailPassActivity> activityFrom) {
 
 
-
-    public  void activity(Activity activityTo, Class<EmailPassActivity> activityFrom){
-
-
-        Intent intent = new Intent( activityTo, activityFrom);
+        Intent intent = new Intent(activityTo, activityFrom);
         startActivity(intent);
         finish();
 
     }
 
 
-//
-//    public  void document_check(FirebaseUser user){
-//        if(user.getUid() !=null){
-//
-//            DocumentReference docRef = mDocument.collection("users").document(user.getUid());
-//            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                @Override
-//                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                    if (task.isSuccessful()) {
-//                        DocumentSnapshot document = task.getResult();
-//                        if (document != null && document.exists()) {
-//                            // Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-//
-//                            Intent intent= new Intent(LoginActivity.this,SocializeDashboardActivity.class);
-//                            startActivity(intent);
-//                            finish();
-//
-//                        } else {
-//                            // Log.d(TAG, "No such document");
-//
-//                            Intent intent= new Intent(LoginActivity.this,MainActivity.class);
-//                            startActivity(intent);
-//                            finish();
-//                        }
-//                    }
-//                }
-//            });
-//        }
-//    }
 
 
+    private  void updateUI(FirebaseUser user){
+
+        if(user!= null){
+            document_check(user);
+        }
+    }
+
+
+    // Construct the email link credential from the current URL.
+    public  void document_check(FirebaseUser mUser){
+        DocumentReference docRef = mDocument.collection("users").document(mUser.getUid());
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null && document.exists()) {
+                        // Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+
+                        Intent intent= new Intent(getApplicationContext(),SocializeDashboardActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+                        // Log.d(TAG, "No such document");
+
+                        Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+        });
+
+
+
+    }
 }

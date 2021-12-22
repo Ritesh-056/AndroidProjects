@@ -16,15 +16,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.concurrent.TimeUnit;
+
+import np.com.socialize.category.User;
 
 public class OtpVerifyActivity extends AppCompatActivity {
 
@@ -38,12 +45,16 @@ public class OtpVerifyActivity extends AppCompatActivity {
     ProgressBar progress_bar;
     ImageView lArrow;
 
+    FirebaseAuth auth;
+    FirebaseUser mUser;
+    FirebaseFirestore mDocument;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verify);
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         btn_verify = findViewById(R.id.btn_verify);
         otp_phone = findViewById(R.id.otp_phone);
@@ -52,13 +63,16 @@ public class OtpVerifyActivity extends AppCompatActivity {
         progress_bar = findViewById(R.id.progress_bar);
         lArrow = findViewById(R.id.lArrow);
 
+        auth = FirebaseAuth.getInstance();
+        mUser = auth.getCurrentUser();
+        mDocument = FirebaseFirestore.getInstance();
+        lArrow.setVisibility(View.INVISIBLE);
 
-       lArrow.setVisibility(View.INVISIBLE);
 
         String phone_number = getIntent().getStringExtra("phone_number");
-        Log.d(TAG, "onCreate: "+phone_number);
-
+        Log.d(TAG, "onCreate: " + phone_number);
         sendVerificationToUser(phone_number);
+
 
         btn_verify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,21 +82,15 @@ public class OtpVerifyActivity extends AppCompatActivity {
 
                 String code = otp_phone.getEditableText().toString();
 
-
-                if (code.length() == 0){
-
+                if (code.length() == 0) {
                     otp_phone.setError("please insert the OTP");
-                   return;
+                    return;
                 }
-
-                if(code.length() != 6){
+                if (code.length() != 6) {
                     otp_phone.setError("inserted input size otp is not matched");
+                    return;
                 }
-
-
-
                 verifyCode(code);
-
             }
         });
 
@@ -96,6 +104,7 @@ public class OtpVerifyActivity extends AppCompatActivity {
                 finish();
             }
         });
+
 
     }
 
@@ -181,11 +190,12 @@ public class OtpVerifyActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                       if (task.isSuccessful()){
+                          progress_bar.setVisibility(View.INVISIBLE);
+                          Toast.makeText(OtpVerifyActivity.this, "Verification Successful", Toast.LENGTH_SHORT).show();
 
+                          Log.d(TAG, "onComplete: " + mAuth.getUid());
 
-                          Toast.makeText(OtpVerifyActivity.this, "Verification Completed", Toast.LENGTH_SHORT).show();
-
-                          Intent intent = new Intent(OtpVerifyActivity.this,MainActivity.class);
+                          Intent intent = new Intent(OtpVerifyActivity.this,SplashScreen.class);
                           intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                           startActivity(intent);
                           finish();
@@ -206,8 +216,10 @@ public class OtpVerifyActivity extends AppCompatActivity {
 
     }
 
-
-
+    public void openActivity(Class<?> calledActivity) {
+        Intent myIntent = new Intent(this, calledActivity);
+        this.startActivity(myIntent);
+    }
 
 
 }

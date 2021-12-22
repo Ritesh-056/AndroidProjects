@@ -40,24 +40,20 @@ public class SplashScreen extends AppCompatActivity {
         mUser = auth.getCurrentUser();
         mDocument=FirebaseFirestore.getInstance();
 
+
         Thread mythread = new Thread(){
 
 
             @Override
             public void run() {
-
-                document_check();
-                   }
+                       document_check(); }
         };
 
         mythread.start();
 
-
         printHashKey(this);
 
     }
-
-
 
 
 
@@ -91,27 +87,24 @@ public class SplashScreen extends AppCompatActivity {
                        DocumentSnapshot document = task.getResult();
                        if (document != null && document.exists()) {
                            // Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-
-                           Intent intent= new Intent(SplashScreen.this,SocializeDashboardActivity.class);
-                           startActivity(intent);
-                           finish();
-
+                           openActivity(SocializeDashboardActivity.class);
+                       }else{
+                           openActivity(MainActivity.class);
                        }
                    }
                }
            });
 
        } else{
-
-
-           //goto login activity
-
-           Intent intent = new Intent(SplashScreen.this,LoginActivity.class);
-           startActivity(intent);
-           finish();
+              openActivity(LoginActivity.class);
        }
 
 
+    }
+
+    public void openActivity(Class<?> calledActivity) {
+        Intent myIntent = new Intent(this, calledActivity);
+        this.startActivity(myIntent);
     }
 
     private static final String TAG = "SplashScreen";

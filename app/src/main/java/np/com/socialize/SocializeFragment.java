@@ -140,7 +140,7 @@ public class SocializeFragment  extends Fragment {
 
 
                 AlertDialog alert1 =builder1.create();
-
+                alert1.show();
 
                 btn_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -150,7 +150,7 @@ public class SocializeFragment  extends Fragment {
                     }
                 });
 
-                alert1.show();
+
 
 
             }

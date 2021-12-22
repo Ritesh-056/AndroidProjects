@@ -22,8 +22,6 @@ import np.com.socialize.category.UserDataViewModel;
 
 public class ChatFragment extends Fragment {
 
-
-
     UserDataViewModel userDataViewModel ;
 
 
