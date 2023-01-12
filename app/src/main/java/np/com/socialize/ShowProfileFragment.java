@@ -89,8 +89,6 @@ public class ShowProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-
         return  inflater.inflate(R.layout.show_profile_fragment,container,false);
 
     }
@@ -209,9 +207,7 @@ public class ShowProfileFragment extends Fragment {
                             for (QueryDocumentSnapshot doc : value) {
                                 if (doc.get("name") != null) {
 
-
                                     CategoryModel categoryModel=doc.toObject(CategoryModel.class);
-
                                     mhobbies.add(categoryModel);
                                     HobbiesAdapterForSocialize hobbiesAdapter= new HobbiesAdapterForSocialize(mhobbies);
                                     mHobbiesRecyclerViewShowProfile.setAdapter(hobbiesAdapter);

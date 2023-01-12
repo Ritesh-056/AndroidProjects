@@ -1,2 +1,0 @@
-package np.com.socialize;
-

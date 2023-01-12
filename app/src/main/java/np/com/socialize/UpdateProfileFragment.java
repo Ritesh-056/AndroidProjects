@@ -297,19 +297,12 @@ public class UpdateProfileFragment extends Fragment implements AdapterView.OnIte
 
 
                     if (selectedImageUri !=null){
-
-
                         uploadImage(selectedImageUri,mUser);
 
                     }
                     else{
-
-
                         userDataViewModel.addData(mUser);
-
-
                     }
-
 
                     Toast.makeText(getActivity(),"Profile was edited successfully" , Toast.LENGTH_SHORT).show();
                     FragmentTransaction ft1 = getFragmentManager().beginTransaction();

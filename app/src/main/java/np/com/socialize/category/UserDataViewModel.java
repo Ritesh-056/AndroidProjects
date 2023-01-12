@@ -69,7 +69,6 @@ public class UserDataViewModel extends ViewModel {
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
 
 
-
                             try {
                                 User user= documentSnapshot.toObject(User.class);
                                 user.setId(documentSnapshot.getId());
@@ -127,8 +126,6 @@ public class UserDataViewModel extends ViewModel {
                         }
                     });
 
-
-
         }
 
 
@@ -145,8 +142,6 @@ public class UserDataViewModel extends ViewModel {
                       @Override
                       public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
 
-
-
                           ArrayList<User> users = new ArrayList<>();
 
                           for (DocumentSnapshot documentSnapshot:queryDocumentSnapshots.getDocuments()){
@@ -158,8 +153,6 @@ public class UserDataViewModel extends ViewModel {
 
 
                           allUser.postValue(users);
-
-
                           Log.d(TAG, "onSuccess: "+queryDocumentSnapshots.getDocuments().size());
 
 

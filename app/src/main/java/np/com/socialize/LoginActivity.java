@@ -1,6 +1,7 @@
 package np.com.socialize;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
@@ -43,12 +45,15 @@ import np.com.socialize.category.User;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+
     private FirebaseAuth mAuth;
     public static int RC_SIGN_IN = 100;
     private static String TAG = "MainActivity2";
     private static final String EMAIL = "email";
 
 
+    RelativeLayout userInteractionLayout;
     FirebaseUser mUser;
     FirebaseFirestore mDocument;
     User userDocument;
@@ -73,6 +78,11 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         mDocument = FirebaseFirestore.getInstance();
+        userInteractionLayout = findViewById(R.id.userInteractionLayout);
+
+
+        userInteractionLayout.setVisibility(View.INVISIBLE);
+
 
 
         btn_email_password.setOnClickListener(new View.OnClickListener() {
@@ -193,13 +203,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        updateUI(currentUser);
+//    }
 
 
     // this method  is used for google authentication.
@@ -257,8 +267,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void activity(Activity activityTo, Class<EmailPassActivity> activityFrom) {
-
-
         Intent intent = new Intent(activityTo, activityFrom);
         startActivity(intent);
         finish();
@@ -271,7 +279,10 @@ public class LoginActivity extends AppCompatActivity {
     private  void updateUI(FirebaseUser user){
 
         if(user!= null){
+            userInteractionLayout.setVisibility(View.VISIBLE);
             document_check(user);
+            userInteractionLayout.setVisibility(View.INVISIBLE);
+
         }
     }
 
